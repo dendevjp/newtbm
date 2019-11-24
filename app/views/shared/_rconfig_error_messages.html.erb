@@ -1,0 +1,12 @@
+<% if @rconfig.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+      The form contains <%= pluralize(@rconfig.errors.count, "error") %>.
+    </div>
+    <ul>
+    <% @rconfig.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
