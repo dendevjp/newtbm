@@ -1,5 +1,4 @@
 class SystemfailuresController < ApplicationController
-  before_action :admin_user, only: [:index, :edit, :update]
   
   def index
     @systemfailures = Systemfailure.search(get_reporterlist)

@@ -5,7 +5,8 @@
 <td><%= user.team %></td>
 <td>
  <% if current_user.admin == "1" && !current_user?(user) %>
-     <%= link_to "削除", user, method: :delete,
+<%= link_to "更新", edit_user_path(user) %>
+<%= link_to "削除", user, method: :delete,
                                   data: { confirm: "削除しますか?" } %>
   <% end %>
 </td>
