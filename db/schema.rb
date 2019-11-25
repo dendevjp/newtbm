@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_17_133105) do
+ActiveRecord::Schema.define(version: 2019_11_25_144127) do
 
   create_table "rcases", force: :cascade do |t|
     t.string "rnumber"
@@ -61,6 +61,16 @@ ActiveRecord::Schema.define(version: 2019_11_17_133105) do
     t.datetime "recurrence_Preventday"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "discontinue_reason"
+    t.datetime "measures_deadline"
+    t.string "to_hayakawa"
+    t.string "quality_check"
+    t.string "waiting_date_check"
+    t.string "review"
+    t.string "quality_charge"
+    t.string "quality_check_result"
+    t.string "quality_comment"
+    t.string "warning_count"
   end
 
   create_table "users", force: :cascade do |t|

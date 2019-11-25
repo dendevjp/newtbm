@@ -30,6 +30,7 @@
 
       <%= f.label :シグナル %>
       <%= f.text_field :signal, class: 'form-control' %>
+      <%= f.collection_select :signal, Rconfig.where(maincode:"1").order(subcode: "ASC"), :title, :title %>
 
       <%= f.label :ステータス %>
       <%= f.text_field :status, class: 'form-control' %>
