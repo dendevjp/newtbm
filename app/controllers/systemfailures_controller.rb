@@ -3,6 +3,13 @@ class SystemfailuresController < ApplicationController
   def index
     @systemfailures = Systemfailure.search(get_reporterlist)
     @users = User.all
+    respond_to do |format|
+      format.html do
+      end
+      format.csv do
+        send_data @systemfailures.generate_csv, filename: "content.csv"
+      end
+    end
   end
 
   def search

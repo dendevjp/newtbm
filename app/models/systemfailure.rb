@@ -1,7 +1,20 @@
 class Systemfailure < ApplicationRecord
 
 
+  def self.csv_attributes
+    ["systemfailure_number", "created_at", "updated_at"]
+  end
 
+  def self.generate_csv
+    CSV.generate(headers: true) do |csv|
+      csv << csv_attributes
+      all.each do |conts|
+
+conts["systemfailure_number"] = "kkk"
+        csv << csv_attributes.map{|attr| conts.send(attr)}
+      end
+    end
+  end
 
   def self.search(search) #self.でクラスメソッドとしている
 

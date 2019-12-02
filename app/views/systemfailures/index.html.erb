@@ -45,9 +45,10 @@ $(document).ready(function() {
 <table border="1">
   <tr valign = "middle">
     <td>
-      <%= link_to "新規作成", new_systemfailure_path, class: "btn btn-primary btn-xm"  %>
+      <%= link_to "新規作成", new_systemfailure_path, class: "btn btn-primary btn-xm" %>
     </td>
   </tr>
+  <tr><td><%= link_to 'エクスポート', systemfailures_path(format: :csv), class: 'btn btn-primary' %></td></tr>
   <tr valign = "middle">
     <td>
       <table>
