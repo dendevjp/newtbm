@@ -27,13 +27,13 @@ class SystemfailuresController < ApplicationController
 
   def create
     @systemfailure = Systemfailure.new(params[:id])
-    @systemfailureshistory = Systemfailureshistory.new(params[:id])
+    #@systemfailureshistory = Systemfailureshistory.new(params[:id])
     if @systemfailure.save
-      if @systemfailureshistory.save
-        flash[:success] = "登録成功しました。"
-      else
-        flash[:success] = "登録が成功しました。※履歴登録が失敗しました。"
-      end
+      #if @systemfailureshistory.save
+      #  flash[:success] = "登録成功しました。"
+      #else
+      #  flash[:success] = "登録が成功しました。※履歴登録が失敗しました。"
+      #end
       log_in @systemfailure
       redirect_to @systemfailure
     else
@@ -48,12 +48,12 @@ class SystemfailuresController < ApplicationController
   def update
     @systemfailure = Systemfailure.find(params[:id])
     if @systemfailure.update_attributes(systemfailure_params)
-      @systemfailureshistory = Systemfailureshistory.new(params[:id])
-      if systemfailureshistory.save
-        flash[:success] = "保存成功しました。"
-      else
-        flash[:success] = "保存成功しました。※履歴登録が失敗しました。"
-      end
+      #@systemfailureshistory = Systemfailureshistory.new(params[:id])
+      #if systemfailureshistory.save
+      #  flash[:success] = "保存成功しました。"
+      #else
+      #  flash[:success] = "保存成功しました。※履歴登録が失敗しました。"
+      #end
       redirect_to systemfailures_path
     else
       render 'edit'

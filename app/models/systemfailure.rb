@@ -2,7 +2,10 @@ class Systemfailure < ApplicationRecord
 
 
   def self.csv_attributes
-    ["systemfailure_number", "created_at", "updated_at"]
+    ["systemfailure_number", "subsystem_name", "occur_date", "title", "department",
+      "reporter", "update_deadline", "confirm_deadline", "signal", "status", "hayakawa_comment",
+      "chargecomment", "exchange_status", "hayakawa_show", "report_path", "followup", "evidence_update",
+      "overall_check", "quality_status", "occurrence_year", "occurrence_month", "permanent_planday", "recurrence_Preventday"]
   end
 
   def self.generate_csv
